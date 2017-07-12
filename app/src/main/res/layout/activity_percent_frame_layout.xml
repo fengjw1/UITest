@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.fengjw.uitest.PercentFrameLayoutActivity">
+
+    <Button
+        android:id="@+id/percent_frame_button1"
+        android:text="button1"
+        app:layout_widthPercent="50%"
+        app:layout_heightPercent="50%"
+        android:textAllCaps="false"
+        android:layout_gravity="left|top"
+        />
+    <Button
+        android:id="@+id/percent_frame_button2"
+        android:text="button2"
+        app:layout_widthPercent="50%"
+        app:layout_heightPercent="50%"
+        android:textAllCaps="false"
+        android:layout_gravity="right|top"
+        />
+    <Button
+        android:id="@+id/percent_frame_button3"
+        android:text="button3"
+        app:layout_widthPercent="50%"
+        app:layout_heightPercent="50%"
+        android:textAllCaps="false"
+        android:layout_gravity="left|bottom"
+        />
+    <Button
+        android:id="@+id/percent_frame_button4"
+        android:text="button4"
+        app:layout_widthPercent="50%"
+        app:layout_heightPercent="50%"
+        android:textAllCaps="false"
+        android:layout_gravity="right|bottom"
+        />
+
+</android.support.percent.PercentFrameLayout>
