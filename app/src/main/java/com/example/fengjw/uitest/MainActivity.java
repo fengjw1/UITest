@@ -3,6 +3,7 @@ package com.example.fengjw.uitest;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,16 +12,21 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private Button button1,button2;
+    private Button button1,button2,button3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ActionBar actionBar = getSupportActionBar();
+        if(actionBar != null)
+            actionBar.hide();
         button1 = (Button)findViewById(R.id.activity_main_button1);
         button1.setOnClickListener(this);
         button2 = (Button)findViewById(R.id.activity_main_button2);
         button2.setOnClickListener(this);
+        button3 = (Button)findViewById(R.id.activity_main_button3);
+        button3.setOnClickListener(this);
     }
 
     @Override
@@ -53,6 +59,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 progressDialog.setCancelable(true);
                 progressDialog.show();
                 break;
+            case R.id.activity_main_button3:
+                Intent intent = new Intent(MainActivity.this,ListActivity.class);
+                startActivity(intent);
                 default:
                     break;
         }
