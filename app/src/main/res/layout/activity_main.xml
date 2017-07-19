@@ -29,7 +29,7 @@
         app:layout_constraintLeft_toLeftOf="@+id/activity_main_constraintLayout"
         app:layout_constraintRight_toRightOf="@+id/activity_main_constraintLayout"
         app:layout_constraintTop_toBottomOf="@+id/title"
-        android:text="Button1"
+        android:text="Dialog"
         android:textAllCaps="false"/>
     <Button
         android:id="@+id/activity_main_button2"
@@ -39,7 +39,7 @@
         app:layout_constraintLeft_toLeftOf="@+id/activity_main_constraintLayout"
         app:layout_constraintRight_toRightOf="@+id/activity_main_constraintLayout"
         android:textAllCaps="false"
-        android:text="Button2"/>
+        android:text="ProgessDialog"/>
     <Button
         android:id="@+id/activity_main_button3"
         android:layout_width="wrap_content"
@@ -48,6 +48,16 @@
         app:layout_constraintLeft_toLeftOf="@+id/activity_main_constraintLayout"
         app:layout_constraintRight_toRightOf="@+id/activity_main_constraintLayout"
         android:textAllCaps="false"
-        android:text="Button3"/>
+        android:text="ListView"/>
+    <Button
+        android:id="@+id/activity_main_button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/activity_main_button3"
+        app:layout_constraintLeft_toLeftOf="@+id/activity_main_constraintLayout"
+        app:layout_constraintRight_toRightOf="@+id/activity_main_constraintLayout"
+        android:text="RecyclerView"
+        android:textAllCaps="false"
+        />
 
 </android.support.constraint.ConstraintLayout>

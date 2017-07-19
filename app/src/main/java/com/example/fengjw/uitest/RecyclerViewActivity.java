@@ -2,44 +2,29 @@ package com.example.fengjw.uitest;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.ListViewCompat;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
-import android.widget.Adapter;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.Toast;
 
-import com.example.fengjw.adapter.FruitAdapter;
+import com.example.fengjw.adapter.FruitAdapterOfRecyclerView;
 import com.example.fengjw.utils.Fruit;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListActivity extends AppCompatActivity implements View.OnClickListener{
+public class RecyclerViewActivity extends AppCompatActivity {
 
-    private ListView listView;
-    private String[] data = {"Apple", "Banana", "Orange", "Watermelon", "Pear", "Grape", "Pineapple", "Strawberry",
-                            "Cherry", "Mango"};
     private List<Fruit> fruitList = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list);
-        initFruit();//初始化
-        FruitAdapter adapter = new FruitAdapter(ListActivity.this,R.layout.fruit_item,fruitList);
-        listView = (ListView)findViewById(R.id.activity_list);
-        listView.setAdapter(adapter);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Fruit fruit = fruitList.get(i);
-                Toast.makeText(ListActivity.this,fruit.getName(),Toast.LENGTH_SHORT).show();
-            }
-        });
+        setContentView(R.layout.activity_recycler_view);
+        initFruit();
+        RecyclerView recyclerView = (RecyclerView)findViewById(R.id.activity_recycler_view);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+        FruitAdapterOfRecyclerView adapterOfRecyclerView = new FruitAdapterOfRecyclerView(fruitList);
+        recyclerView.setAdapter(adapterOfRecyclerView);
     }
-
     private void initFruit(){
         for (int i = 0; i < 2; i ++){
             Fruit apple = new Fruit("Apple",R.drawable.apple_pic);
@@ -62,13 +47,6 @@ public class ListActivity extends AppCompatActivity implements View.OnClickListe
             fruitList.add(cherry);
             Fruit mango = new Fruit("mango",R.drawable.mango_pic);
             fruitList.add(mango);
-        }
-    }
-
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()){
-            case R.id.activity_list:
         }
     }
 }
