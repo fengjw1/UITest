@@ -59,5 +59,14 @@
         android:text="RecyclerView"
         android:textAllCaps="false"
         />
+    <Button
+        android:id="@+id/activity_main_button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/activity_main_button4"
+        app:layout_constraintLeft_toLeftOf="@+id/activity_main_constraintLayout"
+        app:layout_constraintRight_toRightOf="@+id/activity_main_constraintLayout"
+        android:textAllCaps="false"
+        android:text="TalkDemo"/>
 
 </android.support.constraint.ConstraintLayout>
