@@ -36,7 +36,7 @@ public class TalkDemoActivity extends AppCompatActivity {
         massageAdapter = new MassageAdapter(msgList);
         msgRecycleView.setAdapter(massageAdapter);
         send.setOnClickListener(new View.OnClickListener() {
-            @Override 
+            @Override
             public void onClick(View view) {
                 String content = inputText.getText().toString();
                 if (!"".equals(content)){
